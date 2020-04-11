@@ -7,4 +7,6 @@
     <string name="register">Register</string>
     <string name="phone">Phone</string>
     <string name="continues">Continues</string>
+    <string name="skip">Skip</string>
+    <string name="finish">Finish</string>
 </resources>
