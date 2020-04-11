@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Golden_Bench</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="are_you_forgot_password">Are You Forgot Password</string>
+    <string name="register">Register</string>
+    <string name="phone">Phone</string>
+    <string name="continues">Continues</string>
 </resources>
