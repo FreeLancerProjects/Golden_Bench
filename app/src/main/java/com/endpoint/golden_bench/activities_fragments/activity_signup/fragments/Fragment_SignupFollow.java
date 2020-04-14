@@ -11,24 +11,26 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_signin.SigninActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_signup.SignupActivity;
-import com.endpoint.golden_bench.databinding.FragmentSignIn3Binding;
-import com.endpoint.golden_bench.databinding.FragmentSignUp3Binding;
+import com.endpoint.golden_bench.databinding.FragmentSignUp3FollowBinding;
+import com.endpoint.golden_bench.databinding.FragmentSignUpFollowBinding;
+import com.endpoint.golden_bench.preferences.Preferences;
 
-public class Fragment_Signup3 extends Fragment {
+public class Fragment_SignupFollow extends Fragment {
+
     private SignupActivity activity;
-    private FragmentSignUp3Binding binding;
+    private FragmentSignUpFollowBinding binding;
+    private Preferences preferences;
 
 
-    public static Fragment_Signup3 newInstance() {
-        return new Fragment_Signup3();
+    public static Fragment_SignupFollow newInstance() {
+        return new Fragment_SignupFollow();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up3, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up_follow, container, false);
         initView();
 
         return binding.getRoot();

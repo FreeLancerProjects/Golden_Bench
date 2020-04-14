@@ -1,18 +1,23 @@
-package com.endpoint.golden_bench.activities_fragments.activity_signup;
+package com.endpoint.golden_bench.activities_fragments.activity_user_type;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_signup.fragments.Fragment_SignupFollow;
+import com.endpoint.golden_bench.activities_fragments.activity_signup.SignupActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_signup.fragments.Fragment_Signup2Follow;
 import com.endpoint.golden_bench.activities_fragments.activity_signup.fragments.Fragment_Signup3Follow;
+import com.endpoint.golden_bench.activities_fragments.activity_signup.fragments.Fragment_SignupFollow;
+import com.endpoint.golden_bench.activities_fragments.activity_signuppro.SignupProActivity;
 import com.endpoint.golden_bench.adapter.ViewPagerAdapter;
 import com.endpoint.golden_bench.databinding.ActivitySignUpBinding;
+import com.endpoint.golden_bench.databinding.ActivityUserTypeBinding;
 import com.endpoint.golden_bench.language.Language;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
@@ -23,8 +28,8 @@ import java.util.Locale;
 
 import io.paperdb.Paper;
 
-public class SignupActivity extends AppCompatActivity  {
-    private ActivitySignUpBinding binding;
+public class UserTypeActivity extends AppCompatActivity  {
+    private ActivityUserTypeBinding binding;
     private String lang;
     private ViewPagerAdapter pagerAdapter;
     private Preferences preferences;
@@ -42,7 +47,7 @@ public class SignupActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_user_type);
 
         initView();
 
@@ -51,26 +56,26 @@ public class SignupActivity extends AppCompatActivity  {
 
     private void initView() {
         preferences = Preferences.getInstance();
-        binding.tab.setupWithViewPager(binding.pager);
-        pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        pagerAdapter.addFragments(getFragments());
-        binding.pager.setAdapter(pagerAdapter);
 
-
+binding.fab.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        if(binding.rbPro.isChecked()){
+            Intent intent=new Intent(UserTypeActivity.this, SignupProActivity.class);
+            startActivity(intent);
+        }
+        else {
+            Intent intent=new Intent(UserTypeActivity.this, SignupActivity.class);
+            startActivity(intent);
+        }
+    }
+});
 
 
     }
 
 
-    private List<Fragment> getFragments() {
-        List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(Fragment_SignupFollow.newInstance());
-        fragmentList.add(Fragment_Signup2Follow.newInstance());
-        fragmentList.add(Fragment_Signup3Follow.newInstance());
 
-        return fragmentList;
-
-    }
 
 
 

@@ -1,4 +1,4 @@
-package com.endpoint.golden_bench.activities_fragments.activity_signup;
+package com.endpoint.golden_bench.activities_fragments.activity_signuppro;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_signup.fragments.Fragment_SignupFollow;
-import com.endpoint.golden_bench.activities_fragments.activity_signup.fragments.Fragment_Signup2Follow;
-import com.endpoint.golden_bench.activities_fragments.activity_signup.fragments.Fragment_Signup3Follow;
+import com.endpoint.golden_bench.activities_fragments.activity_signuppro.fragments.Fragment_Signup2Pro;
+import com.endpoint.golden_bench.activities_fragments.activity_signuppro.fragments.Fragment_Signup3Pro;
+import com.endpoint.golden_bench.activities_fragments.activity_signuppro.fragments.Fragment_SignupPro;
 import com.endpoint.golden_bench.adapter.ViewPagerAdapter;
 import com.endpoint.golden_bench.databinding.ActivitySignUpBinding;
 import com.endpoint.golden_bench.language.Language;
@@ -23,7 +23,7 @@ import java.util.Locale;
 
 import io.paperdb.Paper;
 
-public class SignupActivity extends AppCompatActivity  {
+public class SignupProActivity extends AppCompatActivity  {
     private ActivitySignUpBinding binding;
     private String lang;
     private ViewPagerAdapter pagerAdapter;
@@ -64,9 +64,9 @@ public class SignupActivity extends AppCompatActivity  {
 
     private List<Fragment> getFragments() {
         List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(Fragment_SignupFollow.newInstance());
-        fragmentList.add(Fragment_Signup2Follow.newInstance());
-        fragmentList.add(Fragment_Signup3Follow.newInstance());
+        fragmentList.add(Fragment_SignupPro.newInstance());
+        fragmentList.add(Fragment_Signup2Pro.newInstance());
+        fragmentList.add(Fragment_Signup3Pro.newInstance());
 
         return fragmentList;
 
