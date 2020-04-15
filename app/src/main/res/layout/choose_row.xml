@@ -39,7 +39,10 @@ app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radio"
         app:layout_constraintTop_toTopOf="parent"
 
-        tools:ignore="RtlCompat" />
+        tools:ignore="RtlCompat"
+        android:src="@drawable/ic_userrow"
+        android:tint="@color/white"
+        />
 
     <LinearLayout
             android:layout_width="0dp"
