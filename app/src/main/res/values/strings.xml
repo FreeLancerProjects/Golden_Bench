@@ -21,4 +21,6 @@
     <string name="agents">Agents</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="favourite">Favourite</string>
+    <string name="followers">Followers</string>
 </resources>

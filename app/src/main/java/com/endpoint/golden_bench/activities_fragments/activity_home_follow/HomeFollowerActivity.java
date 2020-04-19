@@ -1,4 +1,4 @@
-package com.endpoint.golden_bench.activities_fragments.activity_home;
+package com.endpoint.golden_bench.activities_fragments.activity_home_follow;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.View;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,10 +20,9 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home.fragments.Fragment_Main;
-import com.endpoint.golden_bench.activities_fragments.activity_home.fragments.Fragment_Voice;
-import com.endpoint.golden_bench.activities_fragments.activity_home.fragments.Fragment_profile;
-import com.endpoint.golden_bench.activities_fragments.activity_home.fragments.fragment_bench.fragments.Fragment_Bench;
+import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.Fragment_Main;
+import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.Fragment_Voice;
+import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.fragment_bench.fragments.Fragment_Bench;
 import com.endpoint.golden_bench.activities_fragments.activity_signin.SigninActivity;
 import com.endpoint.golden_bench.language.Language;
 import com.endpoint.golden_bench.models.UserModel;
@@ -35,7 +33,7 @@ import java.util.Locale;
 
 import io.paperdb.Paper;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeFollowerActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private Fragment_Main fragment_main;
     private Fragment_Bench fragment_bench;
@@ -100,7 +98,7 @@ public class HomeActivity extends AppCompatActivity {
         userModel = null;
         preferences.create_update_userdata(this, userModel);
         preferences.create_update_session(this, Tags.session_logout);
-        Intent intent = new Intent(HomeActivity.this, SigninActivity.class);
+        Intent intent = new Intent(HomeFollowerActivity.this, SigninActivity.class);
         startActivity(intent);
         finish();
     }
@@ -286,7 +284,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void NavigateToSignInActivity(boolean isSignIn) {
 //Log.e("data",isSignIn+"");
-        Intent intent = new Intent(HomeActivity.this, SigninActivity.class);
+        Intent intent = new Intent(HomeFollowerActivity.this, SigninActivity.class);
         intent.putExtra("sign_up", isSignIn);
         startActivity(intent);
         finish();

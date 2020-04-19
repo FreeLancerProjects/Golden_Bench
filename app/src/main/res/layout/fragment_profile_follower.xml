@@ -3,199 +3,124 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     >
-
     <data>
-
-        <variable
-            name="backListener"
-            type="com.endpoint.ghair.interfaces.Listeners.BackListener" />
-
         <variable
             name="lang"
             type="String" />
-<variable
-    name="usermodel"
-    type="com.endpoint.ghair.models.UserModel" />
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/gray0">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="match_parent"
+            android:background="@color/gray8"
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:statusBarScrim="@null"
-                app:titleEnabled="false">
-                <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_height="200dp"
+                android:background="@color/black"
+                android:fitsSystemWindows="true"
+
+                >
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="3dp"
-                    android:background="@color/gray0"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:titleEnabled="false"
 
                     >
 
-
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/image"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:src="@drawable/ic_user"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:civ_circle_background_color="@color/white"
-                        android:layout_margin="5dp"
-                        />
-
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        app:layout_constraintStart_toEndOf="@+id/image"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        >
-
-                        <LinearLayout
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
                             android:layout_width="match_parent"
+                            android:layout_height="match_parent"
 
-                            android:layout_height="wrap_content"
-                            android:padding="8dp">
+                            android:src="@drawable/ic_userrow"
 
-                            <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:padding="3dp"
-                                android:src="@drawable/ic_user"
-                                android:tint="@color/input"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
+                            />
+                        <ImageView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+android:layout_gravity="center"
 
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:text='@{usermodel.user_type.equals("client")?usermodel.name:lang.equals("ar")?usermodel.ar_market_title:usermodel.en_market_title}'
-                                android:textColor="@color/input"
-                                android:textSize="13sp" />
+                            android:src="@drawable/ic_userrow"
+                            android:tint="@color/white"
+                            />
 
 
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-
-                            android:layout_height="wrap_content"
-                            android:padding="8dp">
-
-                            <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:padding="3dp"
-                                android:src="@drawable/ic_call"
-                                android:tint="@color/input"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
+                    </FrameLayout>
 
 
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:text="@{usermodel.phone}"
-                                android:textColor="@color/input"
-                                android:textSize="13sp" />
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-
-                            android:layout_height="wrap_content"
-                            android:padding="8dp">
-
-                            <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:padding="3dp"
-                                android:src="@drawable/ic_map"
-                                android:tint="@color/input"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:text="@{usermodel.address}"
-                                android:textColor="@color/input"
-                                android:textSize="13sp" />
+            </com.google.android.material.appbar.AppBarLayout>
 
 
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab"
-                android:background="@color/colorPrimary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tabGravity="fill"
-                app:tabMode="fixed"
-                app:tabTextColor="@color/input"
-                app:tabSelectedTextColor="@color/input"
-                app:tabIndicatorHeight="4dp"
-                app:tabIndicatorColor="@color/white"
-                />
-
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-
-
-
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/pager"
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" ></androidx.viewpager.widget.ViewPager>
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_marginBottom="10dp"
 
+                >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="35dp"
+    android:orientation="vertical"
+    >
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginBottom="8dp"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        app:tabMaxWidth="6dp"
+        app:tabMinWidth="6dp"
+        app:tabMode="fixed"
 
+        >
 
+    </com.google.android.material.tabs.TabLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.viewpager.widget.ViewPager>
+
+    </FrameLayout>
+</LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnBook"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+
+                android:src="@drawable/ic_userrow"
+             app:civ_circle_background_color="@color/colorAccent"
+                app:layout_anchor="@id/app_bar"
+                app:layout_anchorGravity="bottom|center"
+                />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>
-

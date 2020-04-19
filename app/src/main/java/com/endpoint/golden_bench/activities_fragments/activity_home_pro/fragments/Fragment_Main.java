@@ -1,4 +1,4 @@
-package com.endpoint.golden_bench.activities_fragments.activity_home.fragments;
+package com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragments;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home.HomeActivity;
+import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeProActivity;
 import com.endpoint.golden_bench.databinding.FragmnetMainBinding;
 import com.endpoint.golden_bench.preferences.Preferences;
 
@@ -38,8 +38,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Fragment_Main extends Fragment {
-    private static Dialog dialog;
-    private HomeActivity activity;
+    private HomeProActivity activity;
     private FragmnetMainBinding binding;
     private LinearLayoutManager manager, manager2;
     private Preferences preferences;
@@ -64,7 +63,7 @@ public class Fragment_Main extends Fragment {
     private void initView() {
 
 
-        activity = (HomeActivity) getActivity();
+        activity = (HomeProActivity) getActivity();
         preferences = Preferences.getInstance();
         Paper.init(activity);
          lang = Paper.book().read("lang", Locale.getDefault().getLanguage());

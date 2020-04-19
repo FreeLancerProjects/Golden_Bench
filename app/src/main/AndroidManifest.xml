@@ -45,6 +45,12 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
 
         </activity>
+        <activity
+            android:name=".activities_fragments.activity_home_pro.HomeProActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+
+        </activity>
     </application>
 
 </manifest>
