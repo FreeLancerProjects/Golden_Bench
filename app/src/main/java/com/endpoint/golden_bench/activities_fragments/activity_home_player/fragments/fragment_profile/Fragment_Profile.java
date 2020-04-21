@@ -1,4 +1,4 @@
-package com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragments;
+package com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_profile;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -11,11 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
-
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeProActivity;
-import com.endpoint.golden_bench.adapter.ViewPagerAdapter;
-import com.endpoint.golden_bench.databinding.FragmentProfileBinding;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.HomeplayerActivity;
+import com.endpoint.golden_bench.adapter.ViewPagerTitleAdapter;
+import com.endpoint.golden_bench.databinding.FragmentProfileFollowerBinding;
+import com.endpoint.golden_bench.databinding.FragmentProfilePlayerBinding;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
 
@@ -27,9 +27,10 @@ import io.paperdb.Paper;
 
 public class Fragment_Profile extends Fragment {
     private static Dialog dialog;
-    private HomeProActivity activity;
-    private FragmentProfileBinding binding;
+    private HomeplayerActivity activity;
+    private FragmentProfilePlayerBinding binding;
     private String lang;
+
 
     private Preferences preferences;
     private UserModel userModel;
@@ -40,7 +41,7 @@ public class Fragment_Profile extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile_player, container, false);
         initView();
 
 
@@ -49,14 +50,16 @@ public class Fragment_Profile extends Fragment {
 
 
     private void initView() {
-        activity = (HomeProActivity) getActivity();
+        activity = (HomeplayerActivity) getActivity();
         preferences = Preferences.getInstance();
         userModel = preferences.getUserData(activity);
         Paper.init(activity);
-        lang = Paper.book().read("lang", Locale.getDefault().getLanguage());binding.setLang(lang);
+        lang = Paper.book().read("lang", Locale.getDefault().getLanguage());
+
 
 
     }
+
 
 
 }

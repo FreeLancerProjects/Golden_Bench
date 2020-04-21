@@ -1,4 +1,4 @@
-package com.endpoint.golden_bench.activities_fragments.activity_home_follow;
+package com.endpoint.golden_bench.activities_fragments.activity_home_player;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,12 +18,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
-
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.Fragment_Main;
-import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.Fragment_Voice;
-import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.fragment_bench.fragments.Fragment_Bench;
-import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.fragment_profile.Fragment_Profile;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.Fragment_Main;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.Fragment_Voice;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_bench.fragments.Fragment_Bench;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_profile.Fragment_Profile;
 import com.endpoint.golden_bench.activities_fragments.activity_signin.SigninActivity;
 import com.endpoint.golden_bench.language.Language;
 import com.endpoint.golden_bench.models.UserModel;
@@ -34,7 +33,7 @@ import java.util.Locale;
 
 import io.paperdb.Paper;
 
-public class HomeFollowerActivity extends AppCompatActivity {
+public class HomeplayerActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private Fragment_Main fragment_main;
     private Fragment_Bench fragment_bench;
@@ -99,7 +98,7 @@ public class HomeFollowerActivity extends AppCompatActivity {
         userModel = null;
         preferences.create_update_userdata(this, userModel);
         preferences.create_update_session(this, Tags.session_logout);
-        Intent intent = new Intent(HomeFollowerActivity.this, SigninActivity.class);
+        Intent intent = new Intent(HomeplayerActivity.this, SigninActivity.class);
         startActivity(intent);
         finish();
     }
@@ -112,6 +111,7 @@ public class HomeFollowerActivity extends AppCompatActivity {
         AHBottomNavigationItem item2 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
         AHBottomNavigationItem item3 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
         AHBottomNavigationItem item4 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
+        AHBottomNavigationItem item5 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
 
         ahBottomNav.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
         ahBottomNav.setDefaultBackgroundColor(ContextCompat.getColor(this, R.color.white));
@@ -124,6 +124,7 @@ public class HomeFollowerActivity extends AppCompatActivity {
         ahBottomNav.addItem(item2);
         ahBottomNav.addItem(item3);
         ahBottomNav.addItem(item4);
+        ahBottomNav.addItem(item5);
 
         updateBottomNavigationPosition(0);
 
@@ -285,7 +286,7 @@ public class HomeFollowerActivity extends AppCompatActivity {
 
     public void NavigateToSignInActivity(boolean isSignIn) {
 //Log.e("data",isSignIn+"");
-        Intent intent = new Intent(HomeFollowerActivity.this, SigninActivity.class);
+        Intent intent = new Intent(HomeplayerActivity.this, SigninActivity.class);
         intent.putExtra("sign_up", isSignIn);
         startActivity(intent);
         finish();

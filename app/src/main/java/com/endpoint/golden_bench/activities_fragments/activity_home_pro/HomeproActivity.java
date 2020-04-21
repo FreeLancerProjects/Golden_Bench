@@ -14,38 +14,36 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
-
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragments.Fragment_Bench;
-import com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragments.Fragment_Main;
-import com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragments.Fragment_Profile;
-import com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragments.Fragment_Voice;
+import com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragment_bench.fragments.Fragment_Bench;
+import com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragment_profile.Fragment_Profile;
 import com.endpoint.golden_bench.activities_fragments.activity_signin.SigninActivity;
 import com.endpoint.golden_bench.language.Language;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
+import com.endpoint.golden_bench.tags.Tags;
 
 import java.util.Locale;
 
 import io.paperdb.Paper;
 
-public class HomeProActivity extends AppCompatActivity {
+public class HomeproActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private Fragment_Main fragment_main;
     private Fragment_Bench fragment_bench;
     private Fragment_Voice fragment_voice;
     private Fragment_Profile fragment_profile;
     private AHBottomNavigation ahBottomNav;
-
+    private LinearLayoutManager manager;
     private DrawerLayout drawer;
     private Preferences preferences;
     private UserModel userModel;
     private ActionBarDrawerToggle toggle;
     private Toolbar toolbar;
-   
     private String lang;
 
 
@@ -54,11 +52,13 @@ public class HomeProActivity extends AppCompatActivity {
         super.attachBaseContext(Language.updateResources(newBase, Paper.book().read("lang", Locale.getDefault().getLanguage())));}
 
 
+  
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+    
         setContentView(R.layout.activity_home);
         initView();
 
@@ -80,15 +80,25 @@ public class HomeProActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
         fragmentManager = getSupportFragmentManager();
         toolbar = findViewById(R.id.toolbar);
-       
-      
+        
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+        manager = new LinearLayoutManager(this);
        
 
         toggle.syncState();
         setUpBottomNavigation();
        
+
+    }
+
+    public void Logout() {
+        userModel = null;
+        preferences.create_update_userdata(this, userModel);
+        preferences.create_update_session(this, Tags.session_logout);
+        Intent intent = new Intent(HomeproActivity.this, SigninActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 
@@ -99,6 +109,7 @@ public class HomeProActivity extends AppCompatActivity {
         AHBottomNavigationItem item2 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
         AHBottomNavigationItem item3 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
         AHBottomNavigationItem item4 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
+        AHBottomNavigationItem item5 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
 
         ahBottomNav.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
         ahBottomNav.setDefaultBackgroundColor(ContextCompat.getColor(this, R.color.white));
@@ -111,6 +122,7 @@ public class HomeProActivity extends AppCompatActivity {
         ahBottomNav.addItem(item2);
         ahBottomNav.addItem(item3);
         ahBottomNav.addItem(item4);
+        ahBottomNav.addItem(item5);
 
         updateBottomNavigationPosition(0);
 
@@ -126,7 +138,7 @@ public class HomeProActivity extends AppCompatActivity {
 
                         break;
                     case 2:
-                        displayFragmentVoice();
+                        displayFragmentvoice();
                         break;
                     case 3:
                             displayFragmentProfile();
@@ -144,7 +156,7 @@ public class HomeProActivity extends AppCompatActivity {
     private void updateBottomNavigationPosition(int pos) {
 
         ahBottomNav.setCurrentItem(pos, false);
-      
+
     }
 
     public void displayFragmentMain() {
@@ -153,13 +165,15 @@ public class HomeProActivity extends AppCompatActivity {
                 fragment_main = Fragment_Main.newInstance();
             }
 
+            if (fragment_voice != null && fragment_voice.isAdded()) {
+                fragmentManager.beginTransaction().hide(fragment_voice).commit();
+            }
             if (fragment_bench != null && fragment_bench.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_bench).commit();
             }
             if (fragment_voice != null && fragment_voice.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_voice).commit();
             }
-           
             if (fragment_profile != null && fragment_profile.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_profile).commit();
             }
@@ -187,7 +201,9 @@ public class HomeProActivity extends AppCompatActivity {
             if (fragment_voice != null && fragment_voice.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_voice).commit();
             }
-           
+            if (fragment_voice != null && fragment_voice.isAdded()) {
+                fragmentManager.beginTransaction().hide(fragment_voice).commit();
+            }
             if (fragment_profile != null && fragment_profile.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_profile).commit();
             }
@@ -195,16 +211,19 @@ public class HomeProActivity extends AppCompatActivity {
                 fragmentManager.beginTransaction().show(fragment_bench).commit();
 
             } else {
-                fragmentManager.beginTransaction().add(R.id.fragment_home_container, fragment_bench, "fragment_bench").addToBackStack("fragment_bench").commit();
+                fragmentManager.beginTransaction().add(R.id.fragment_home_container, fragment_bench, "fragment_require").addToBackStack("fragment_require").commit();
 
             }
-            updateBottomNavigationPosition(1);
+            updateBottomNavigationPosition(2);
         } catch (Exception e) {
         }
+        
+
 
     }
 
-    private void displayFragmentVoice() {
+    private void displayFragmentvoice() {
+
         try {
             if (fragment_voice == null) {
                 fragment_voice = Fragment_Voice.newInstance();
@@ -215,7 +234,9 @@ public class HomeProActivity extends AppCompatActivity {
             if (fragment_bench != null && fragment_bench.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_bench).commit();
             }
-
+            if (fragment_voice != null && fragment_voice.isAdded()) {
+                fragmentManager.beginTransaction().hide(fragment_voice).commit();
+            }
             if (fragment_profile != null && fragment_profile.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_profile).commit();
             }
@@ -223,13 +244,12 @@ public class HomeProActivity extends AppCompatActivity {
                 fragmentManager.beginTransaction().show(fragment_voice).commit();
 
             } else {
-                fragmentManager.beginTransaction().add(R.id.fragment_home_container, fragment_voice, "fragment_require").addToBackStack("fragment_require").commit();
+                fragmentManager.beginTransaction().add(R.id.fragment_home_container, fragment_voice, "fragment_voice").addToBackStack("fragment_voice").commit();
 
             }
-            updateBottomNavigationPosition(2);
+            updateBottomNavigationPosition(1);
         } catch (Exception e) {
         }
-
     }
 
     private void displayFragmentProfile() {
@@ -240,13 +260,15 @@ public class HomeProActivity extends AppCompatActivity {
             if (fragment_main != null && fragment_main.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_main).commit();
             }
-            if (fragment_voice != null && fragment_voice.isAdded()) {
-                fragmentManager.beginTransaction().hide(fragment_voice).commit();
-            }
             if (fragment_bench != null && fragment_bench.isAdded()) {
                 fragmentManager.beginTransaction().hide(fragment_bench).commit();
             }
-
+            if (fragment_voice != null && fragment_voice.isAdded()) {
+                fragmentManager.beginTransaction().hide(fragment_voice).commit();
+            }
+            if (fragment_voice != null && fragment_voice.isAdded()) {
+                fragmentManager.beginTransaction().hide(fragment_voice).commit();
+            }
             if (fragment_profile.isAdded()) {
                 fragmentManager.beginTransaction().show(fragment_profile).commit();
 
@@ -262,7 +284,7 @@ public class HomeProActivity extends AppCompatActivity {
 
     public void NavigateToSignInActivity(boolean isSignIn) {
 //Log.e("data",isSignIn+"");
-        Intent intent = new Intent(HomeProActivity.this, SigninActivity.class);
+        Intent intent = new Intent(HomeproActivity.this, SigninActivity.class);
         intent.putExtra("sign_up", isSignIn);
         startActivity(intent);
         finish();

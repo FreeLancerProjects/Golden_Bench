@@ -1,4 +1,4 @@
-package com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.fragment_profile;
+package com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_bench.fragments;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -12,9 +12,9 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home_follow.HomeFollowerActivity;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.HomeplayerActivity;
 import com.endpoint.golden_bench.adapter.ViewPagerTitleAdapter;
-import com.endpoint.golden_bench.databinding.FragmentProfileFollowerBinding;
+import com.endpoint.golden_bench.databinding.FragmentBenchBinding;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
 
@@ -26,8 +26,8 @@ import io.paperdb.Paper;
 
 public class Fragment_Bench extends Fragment {
     private static Dialog dialog;
-    private HomeFollowerActivity activity;
-    private FragmentProfileFollowerBinding binding;
+    private HomeplayerActivity activity;
+    private FragmentBenchBinding binding;
     private String lang;
     private List<Fragment> fragmentList;
     private List<String> titles;
@@ -42,7 +42,7 @@ public class Fragment_Bench extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile_follower, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bench, container, false);
         initView();
 
 
@@ -51,14 +51,14 @@ public class Fragment_Bench extends Fragment {
 
 
     private void initView() {
-        activity = (HomeFollowerActivity) getActivity();
+        activity = (HomeplayerActivity) getActivity();
         preferences = Preferences.getInstance();
         userModel = preferences.getUserData(activity);
         Paper.init(activity);
         lang = Paper.book().read("lang", Locale.getDefault().getLanguage());
         fragmentList = new ArrayList<>();
         titles = new ArrayList<>();
-        binding.tab.setupWithViewPager(binding.pager);
+        binding.tab1.setupWithViewPager(binding.pager);
         addFragments_Titles();
         binding.pager.setOffscreenPageLimit(fragmentList.size());
         adapter = new ViewPagerTitleAdapter(getChildFragmentManager());
@@ -70,12 +70,12 @@ public class Fragment_Bench extends Fragment {
     }
 
     private void addFragments_Titles() {
-        fragmentList.add(FragmentFavourite.newInstance());
-        fragmentList.add(FragmentFollowers.newInstance());
+        fragmentList.add(FragmentPlayers.newInstance());
+        fragmentList.add(FragmentAgents.newInstance());
 
 
-        titles.add(getString(R.string.favourite));
-        titles.add(getString(R.string.followers));
+        titles.add(getString(R.string.player));
+        titles.add(getString(R.string.agents));
 
     }
 
