@@ -107,17 +107,17 @@ public class HomeplayerActivity extends AppCompatActivity {
 
     private void setUpBottomNavigation() {
 
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
-        AHBottomNavigationItem item4 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
-        AHBottomNavigationItem item5 = new AHBottomNavigationItem("", R.drawable.ic_userrow);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem("", R.drawable.ic_lhome);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem("", R.drawable.ic_playernav);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem("", R.drawable.ic_mick);
+        AHBottomNavigationItem item4 = new AHBottomNavigationItem("", R.drawable.ic_chat);
+        AHBottomNavigationItem item5 = new AHBottomNavigationItem("", R.drawable.ic_usernav);
 
         ahBottomNav.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
-        ahBottomNav.setDefaultBackgroundColor(ContextCompat.getColor(this, R.color.white));
+        ahBottomNav.setDefaultBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
         ahBottomNav.setTitleTextSizeInSp(14, 12);
         ahBottomNav.setForceTint(true);
-        ahBottomNav.setAccentColor(ContextCompat.getColor(this, R.color.colorAccent));
+        ahBottomNav.setAccentColor(ContextCompat.getColor(this, R.color.black));
         ahBottomNav.setInactiveColor(ContextCompat.getColor(this, R.color.gray8));
 
         ahBottomNav.addItem(item1);
@@ -142,7 +142,7 @@ public class HomeplayerActivity extends AppCompatActivity {
                     case 2:
                         displayFragmentvoice();
                         break;
-                    case 3:
+                    case 4:
                             displayFragmentProfile();
                       
                         break;
@@ -278,7 +278,7 @@ public class HomeplayerActivity extends AppCompatActivity {
                 fragmentManager.beginTransaction().add(R.id.fragment_home_container, fragment_profile, "fragment_profile").addToBackStack("fragment_profile").commit();
 
             }
-            updateBottomNavigationPosition(3);
+            updateBottomNavigationPosition(4);
         } catch (Exception e) {
         }
     }

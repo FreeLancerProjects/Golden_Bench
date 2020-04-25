@@ -1,4 +1,4 @@
-package com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragment_profile;
+package com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragment_profile.fragmentmyprofile;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -12,12 +12,9 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home_follow.HomeFollowerActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeproActivity;
-import com.endpoint.golden_bench.activities_fragments.activity_home_pro.fragment_profile.fragmentmyprofile.Fragment_MyProfile;
 import com.endpoint.golden_bench.adapter.ViewPagerTitleAdapter;
-import com.endpoint.golden_bench.databinding.FragmentProfileFollowerBinding;
-import com.endpoint.golden_bench.databinding.FragmentProfileProfessionalBinding;
+import com.endpoint.golden_bench.databinding.FragmentProfileBinding;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
 
@@ -27,10 +24,10 @@ import java.util.Locale;
 
 import io.paperdb.Paper;
 
-public class Fragment_Profile extends Fragment {
+public class Fragment_MyProfile extends Fragment {
     private static Dialog dialog;
     private HomeproActivity activity;
-    private FragmentProfileProfessionalBinding binding;
+    private FragmentProfileBinding binding;
     private String lang;
     private List<Fragment> fragmentList;
     private List<String> titles;
@@ -39,13 +36,13 @@ public class Fragment_Profile extends Fragment {
     private Preferences preferences;
     private UserModel userModel;
 
-    public static Fragment_Profile newInstance() {
-        return new Fragment_Profile();
+    public static Fragment_MyProfile newInstance() {
+        return new Fragment_MyProfile();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile_professional, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         initView();
 
 
@@ -73,16 +70,14 @@ public class Fragment_Profile extends Fragment {
     }
 
     private void addFragments_Titles() {
-        fragmentList.add(Fragment_MyProfile.newInstance());
-        fragmentList.add(FragmentManagePlayer.newInstance());
+        fragmentList.add(FragmentBlog.newInstance());
+        fragmentList.add(FragmentMyVoice.newInstance());
+        fragmentList.add(FragmentPhoto.newInstance());
 
-        fragmentList.add(FragmentFollowers.newInstance());
 
-
-        titles.add(getString(R.string.profile));
-        titles.add(getString(R.string.manageplayer));
-
-        titles.add(getString(R.string.followers));
+        titles.add(getString(R.string.myblog));
+        titles.add(getString(R.string.voice));
+        titles.add(getString(R.string.photos));
 
     }
 

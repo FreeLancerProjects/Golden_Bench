@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.endpoint.golden_bench.R;
 import com.endpoint.golden_bench.activities_fragments.activity_home_player.HomeplayerActivity;
 import com.endpoint.golden_bench.adapter.ViewPagerTitleAdapter;
-import com.endpoint.golden_bench.databinding.FragmentProfileFollowerBinding;
+
 import com.endpoint.golden_bench.databinding.FragmentProfilePlayerBinding;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;

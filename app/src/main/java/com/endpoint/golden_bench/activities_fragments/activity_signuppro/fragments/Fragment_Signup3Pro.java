@@ -12,7 +12,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeProActivity;
+import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeproActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_signuppro.SignupProActivity;
 import com.endpoint.golden_bench.databinding.FragmentSignUp3ProBinding;
 
@@ -39,7 +39,7 @@ public class Fragment_Signup3Pro extends Fragment {
 binding.btnSkip.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent intent=new Intent(activity, HomeProActivity.class);
+        Intent intent=new Intent(activity, HomeproActivity.class);
         startActivity(intent);
     }
 });

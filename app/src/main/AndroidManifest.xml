@@ -46,7 +46,19 @@
 
         </activity>
         <activity
-            android:name=".activities_fragments.activity_home_pro.HomeProActivity"
+            android:name=".activities_fragments.activity_home_pro.HomeproActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+
+        </activity>
+        <activity
+            android:name=".activities_fragments.activity_home_follow.HomeFollowerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+
+        </activity>
+        <activity
+            android:name=".activities_fragments.activity_home_player.HomeplayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
 

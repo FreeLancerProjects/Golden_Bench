@@ -7,17 +7,17 @@
         android:layout_height="match_parent">
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/tab_selected"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:tabGravity="fill"
             app:tabMode="fixed"
-            app:tabTextColor="@color/colorAccent"
-            app:tabSelectedTextColor="@color/colorAccent"
-            app:tabIndicatorHeight="4dp"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/white"
+            app:tabIndicatorHeight="0dp"
             app:tabIndicatorColor="@color/white"
-
+app:tabBackground="@drawable/tab_selected"
             >
 
 

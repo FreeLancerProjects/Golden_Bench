@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2b8dcd</color>
-    <color name="colorPrimaryDark">#176BAE</color>
-    <color name="colorAccent">#176BAE</color>
+    <color name="colorPrimary">#52be92</color>
+    <color name="colorPrimaryDark">#52be92</color>
+    <color name="colorAccent">#52be92</color>
     <color name="secondColor">#32db64</color>
     <color name="endColor">#26A84D</color>
     <color name="book_trans">#99000000</color>

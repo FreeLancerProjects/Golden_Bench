@@ -23,4 +23,9 @@
     <string name="close">Close</string>
     <string name="favourite">Favourite</string>
     <string name="followers">Followers</string>
+    <string name="myblog">MBlog</string>
+    <string name="voice">My Voice</string>
+    <string name="photos">Photos</string>
+    <string name="profile">Profile</string>
+    <string name="manageplayer">Mange Player</string>
 </resources>

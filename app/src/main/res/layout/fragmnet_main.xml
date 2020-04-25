@@ -24,7 +24,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
+        android:background="@color/white"
         android:fillViewport="true">
 
 
@@ -38,6 +38,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:background="@color/black"
     >
     <FrameLayout
         android:id="@+id/flImage"
@@ -87,7 +88,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/gray0"
+                android:background="@color/black"
                 android:padding="8dp"
 
                 >
@@ -123,7 +124,7 @@
                     android:id="@+id/recservice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAccent">
+                    android:background="@color/black">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -181,7 +182,7 @@
                     android:id="@+id/rec_bestseler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAccent">
+                    android:background="@color/white">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
