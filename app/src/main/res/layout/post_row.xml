@@ -2,84 +2,107 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <data>
-    </data>
+
+    <data></data>
 
     <androidx.cardview.widget.CardView
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginTop="3dp"
+        android:layout_marginRight="5dp"
         android:layout_marginBottom="2dp"
+        android:orientation="vertical"
         app:cardCornerRadius="5dp"
-        app:contentPadding="5dp"
         app:cardElevation="3dp"
-        >
+        app:contentPadding="5dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <com.github.siyamed.shapeimageview.CircularImageView
-        android:id="@+id/r_im_search"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
 
-        tools:ignore="RtlCompat"
-        android:src="@drawable/ic_userrow"
-        android:tint="@color/colorAccent"
-        app:siBorderColor="@color/colorAccent"
-        app:siBorderWidth="1dp"
-        />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/r_im_search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-            >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/r_im_search"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_userrow"
+                    android:tint="@color/colorAccent"
 
-      
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp"
-            android:text="@string/user_name"
-            android:layout_marginTop="5dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp"
-            android:text="@string/user_name"
-            android:layout_marginTop="5dp"
-            />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:siBorderColor="@color/colorAccent"
+                    app:siBorderWidth="1dp"
+                    tools:ignore="RtlCompat"
+                    app:civ_circle_background_color="@color/gray3"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/r_im_search"
+                    app:layout_constraintTop_toTopOf="parent">
 
 
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/user_name"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/user_name"
+                        android:textColor="@color/gray3"
+                        android:textSize="14sp"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
+                        />
+
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:textSize="14sp"
-                android:text="@string/user_name"
                 android:layout_marginTop="10dp"
-                />
+              android:padding="5dp"
+                android:text="Skill : Core Java + Spring boot + AWS Lambda profiles:
+
+Level: SSE/TL/AM
+Must have Skills: Core Java, Spring boot  AWS Lambda
+Location: Bangalore
+
+
+Job Description:
+
+Java8+ (Expert)
+Spring 4.x, Spring boot 2.x
+Experience working in micro service architecture.
+Excellent AWS skills.
+designing and solutioning skills.
+communication and articulate skills .
+Able to roll-out POCs and solutions quickly and be able to justify solution.
+
+Share profiles to jvidya@abits.co.in"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </layout>
