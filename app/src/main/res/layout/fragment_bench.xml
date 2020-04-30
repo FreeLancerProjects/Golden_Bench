@@ -4,7 +4,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/gray5"
+        >
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab1"
             android:background="@drawable/tab_selected"
@@ -24,19 +26,32 @@ app:tabBackground="@drawable/tab_selected"
         </com.google.android.material.tabs.TabLayout>
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab12"
-            android:background="@color/black"
+            android:background="@color/gray5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/tab1"
             app:tabGravity="fill"
             app:tabMode="fixed"
-            app:tabTextColor="@color/colorAccent"
-            app:tabSelectedTextColor="@color/black"
-            app:tabIndicatorHeight="4dp"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/white"
+            app:tabIndicatorHeight="0dp"
             app:tabIndicatorColor="@color/white"
 
             >
-
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/user_name" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/user_name" /> <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/user_name" /> <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/user_name" />
 
         </com.google.android.material.tabs.TabLayout>
 <androidx.viewpager.widget.ViewPager

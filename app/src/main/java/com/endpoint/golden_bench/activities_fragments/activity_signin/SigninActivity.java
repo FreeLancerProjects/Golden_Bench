@@ -65,10 +65,10 @@ public class SigninActivity extends AppCompatActivity  {
 
     private List<Fragment> getFragments() {
         List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(Fragment_Signin.newInstance());
+
         fragmentList.add(Fragment_Signin2.newInstance());
         fragmentList.add(Fragment_Signin3.newInstance());
-
+        fragmentList.add(Fragment_Signin.newInstance());
         return fragmentList;
 
     }

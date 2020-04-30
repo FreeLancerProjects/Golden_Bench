@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="25dp"
+        android:background="@drawable/studiem"
         >
 
         <FrameLayout
@@ -15,13 +16,16 @@
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             android:orientation="vertical"
-            android:background="@color/colorAccent"
-
             >
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+
+                android:alpha="5"
+android:paddingBottom="25dp"
+                />
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab"
                 android:layout_width="wrap_content"

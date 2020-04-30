@@ -28,4 +28,8 @@
     <string name="photos">Photos</string>
     <string name="profile">Profile</string>
     <string name="manageplayer">Mange Player</string>
+    <string name="share">share</string>
+    <string name="third_move">third Move</string>
+    <string name="seconed_move">Seconed Move</string>
+    <string name="move">First Move</string>
 </resources>

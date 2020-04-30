@@ -10,16 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.endpoint.golden_bench.R;
 import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeproActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_signuppro.SignupProActivity;
+import com.endpoint.golden_bench.adapter.Choose_Adapter;
 import com.endpoint.golden_bench.databinding.FragmentSignUp3ProBinding;
+import com.endpoint.golden_bench.models.MarketCatogryModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Fragment_Signup3Pro extends Fragment {
     private SignupProActivity activity;
     private FragmentSignUp3ProBinding binding;
-
+    private List<MarketCatogryModel.Data> dataList;
+    private Choose_Adapter categorys_adapter;
 
     public static Fragment_Signup3Pro newInstance() {
         return new Fragment_Signup3Pro();
@@ -35,6 +42,7 @@ public class Fragment_Signup3Pro extends Fragment {
     }
 
     private void initView() {
+        dataList=new ArrayList<>();
         activity=(SignupProActivity)getActivity();
 binding.btnSkip.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -43,7 +51,28 @@ binding.btnSkip.setOnClickListener(new View.OnClickListener() {
         startActivity(intent);
     }
 });
+        categorys_adapter = new Choose_Adapter(dataList, getActivity());
+
+        binding.recVtiew.setLayoutManager(new LinearLayoutManager(getActivity()));
+        binding.recVtiew.setAdapter(categorys_adapter);
+
+        Adddata();
+
     }
+
+    private void Adddata() {
+        dataList.add(new MarketCatogryModel.Data());
+        dataList.add(new MarketCatogryModel.Data());
+        dataList.add(new MarketCatogryModel.Data());
+        dataList.add(new MarketCatogryModel.Data());
+        dataList.add(new MarketCatogryModel.Data());
+        dataList.add(new MarketCatogryModel.Data());
+        dataList.add(new MarketCatogryModel.Data());
+        dataList.add(new MarketCatogryModel.Data());
+        categorys_adapter.notifyDataSetChanged();
+
+    }
+
 
 
 }

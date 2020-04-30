@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             android:orientation="vertical"
-            android:background="@color/colorAccent"
+            android:background="@drawable/studiem"
 
             >
             <androidx.viewpager.widget.ViewPager
@@ -31,6 +31,7 @@
                 app:tabMode="scrollable"
                 app:tabMinWidth="6dp"
                 app:tabMaxWidth="6dp"
+                app:tabPaddingStart="5dp"
                 app:tabBackground="@drawable/tab_slider_indicator"
 
                 />

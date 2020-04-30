@@ -2,15 +2,16 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_selected="false">
         <shape android:shape="oval">
+            <stroke android:color="@color/white" android:width="1px"/>
             <size android:width="6dp" android:height="6dp"/>
-            <solid android:color="@color/gray4"/>
+            <solid android:color="@color/transparent"/>
         </shape>
     </item>
 
     <item android:state_selected="true">
         <shape android:shape="oval">
             <size android:width="6dp" android:height="6dp"/>
-            <solid android:color="@color/colorPrimary"/>
+            <solid android:color="@color/white"/>
         </shape>
     </item>
 </selector>
