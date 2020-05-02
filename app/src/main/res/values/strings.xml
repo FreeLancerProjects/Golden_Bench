@@ -32,4 +32,10 @@
     <string name="third_move">third Move</string>
     <string name="seconed_move">Seconed Move</string>
     <string name="move">First Move</string>
+    <string name="profiessional_account">Profiessional Account</string>
+    <string name="home">Home</string>
+    <string name="web_site">Web Site</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="terms_and_conditions">Terms And Conditions</string>
+    <string name="exit">Exit</string>
 </resources>

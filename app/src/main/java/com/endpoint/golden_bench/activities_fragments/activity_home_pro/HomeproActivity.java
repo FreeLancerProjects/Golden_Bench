@@ -82,7 +82,7 @@ public class HomeproActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
-        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorAccent));
         manager = new LinearLayoutManager(this);
        
 
