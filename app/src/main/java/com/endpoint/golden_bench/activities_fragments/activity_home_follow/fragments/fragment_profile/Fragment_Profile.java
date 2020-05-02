@@ -17,6 +17,7 @@ import com.endpoint.golden_bench.adapter.ViewPagerTitleAdapter;
 import com.endpoint.golden_bench.databinding.FragmentProfileFollowerBinding;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
+import com.google.android.material.appbar.AppBarLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +67,22 @@ public class Fragment_Profile extends Fragment {
         adapter.addTitles(titles);
         binding.pager.setAdapter(adapter);
 
+        binding.appBar.addOnOffsetChangedListener((AppBarLayout.BaseOnOffsetChangedListener) (appBarLayout, verticalOffset) -> {
+            int total_rang = appBarLayout.getTotalScrollRange();
+            if ((total_rang + verticalOffset) > 70) {
 
+
+                        binding.ll.setVisibility(View.VISIBLE);
+
+
+
+                } else {
+                    binding.ll.setVisibility(View.GONE);
+
+                }
+
+
+        });
     }
 
     private void addFragments_Titles() {
