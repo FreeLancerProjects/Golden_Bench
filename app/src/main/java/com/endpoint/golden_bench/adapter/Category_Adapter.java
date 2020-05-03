@@ -66,7 +66,13 @@ public class Category_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             msgLeftHolder.binding.videoview.setMediaController(mc);
 
             msgLeftHolder.binding.videoview.setVideoPath("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
-msgLeftHolder.binding.videoview.requestFocus();
+//msgLeftHolder.binding.videoview.requestFocus();
+msgLeftHolder.binding.videoview.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+
+    }
+});
 
         } else if (holder instanceof EventsHolder) {
             EventsHolder msgRightHolder = (EventsHolder) holder;

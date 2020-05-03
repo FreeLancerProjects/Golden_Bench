@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 
 import com.endpoint.golden_bench.R;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.HomeplayerActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_signin.SigninActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_signup.SignupActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_user_type.UserTypeActivity;
@@ -45,6 +46,13 @@ binding.btnNewAccount.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         Intent intent=new Intent(activity, UserTypeActivity.class);
+        startActivity(intent);
+    }
+});
+binding.btnLogin.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(activity, HomeplayerActivity.class);
         startActivity(intent);
     }
 });
