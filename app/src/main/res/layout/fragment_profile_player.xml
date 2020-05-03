@@ -39,7 +39,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/flag_eg">
+                        android:background="@drawable/studiem">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                                 android:id="@+id/cons_data"
                                 android:layout_width="match_parent"
                                 android:layout_height="130dp"
-                               android:background="@drawable/btn_sign_up"
+                               android:background="@color/gray5"
                                 app:layout_constraintBottom_toBottomOf="parent"
 
                                 tools:layout_editor_absoluteX="15dp">
@@ -66,7 +66,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
                                 android:src="@drawable/ic_userrow"
-                                app:civ_border_color="@color/colorAccent"
+                                app:civ_border_color="@color/gray3"
                                 app:civ_border_width="1dp"
                                 app:civ_circle_background_color="@color/colorAccent"
                                 app:layout_constraintBottom_toTopOf="@+id/cons_data"
@@ -91,11 +91,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/tv_name"
     android:weightSum="4"
     android:gravity="center"
+    android:layout_marginStart="8dp"
+    tools:ignore="RtlCompat"
     >
     <TextView
         android:layout_width="0dp"
@@ -145,11 +146,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/ll"
                                 android:weightSum="4"
                                 android:gravity="center"
+                                android:layout_marginStart="8dp"
+                                tools:ignore="RtlCompat"
                                 >
                                 <TextView
                                     android:layout_width="0dp"
@@ -199,13 +201,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/lll"
                                 android:weightSum="4"
                                 android:gravity="center"
-                                >
+                                android:layout_marginStart="8dp"
+                                tools:ignore="RtlCompat">
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -249,6 +250,35 @@
 
                                     />
                             </LinearLayout>
+                            <ImageView
+                                android:id="@+id/image1"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:src="@drawable/ic_userrow"
+
+app:layout_constraintStart_toEndOf="@+id/ll"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                              app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginStart="8dp"
+                                app:layout_constraintVertical_bias=".8"
+                                tools:ignore="RtlCompat" />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:gravity="center"
+                                android:text="8"
+                                android:textColor="@color/black"
+                                android:textSize="50sp"
+
+                                android:textStyle="bold"
+                                android:layout_weight="1"
+                                app:layout_constraintStart_toEndOf="@+id/image1"
+                                app:layout_constraintTop_toTopOf="@id/cons_data"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="@id/cons_data"
+
+                                />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -274,17 +304,20 @@
                             app:layout_constraintTop_toTopOf="parent"
 
                             tools:ignore="RtlCompat" />
+
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/user_name"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:layout_margin="15dp"
+                            android:textSize="13sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="RtlCompat"
+android:layout_margin="15dp"
+                           />
 
-                            tools:ignore="RtlCompat" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -331,22 +364,40 @@
             app:layout_constraintTop_toTopOf="parent"
 
             tools:ignore="RtlCompat" />
-        <TextView
-            android:id="@+id/tv_view2"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/user_name"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_margin="15dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp"
 
-            tools:ignore="RtlCompat" />
+            tools:ignore="RtlCompat">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/add"
+                app:civ_border_color="@color/gray3"
+                app:civ_border_width="1dp"
+                android:layout_gravity="center"
+                app:civ_circle_background_color="@color/gray3"
+                android:tint="@color/black"
+                />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+
+
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv1"
@@ -370,22 +421,42 @@
             app:layout_constraintTop_toTopOf="parent"
 
             tools:ignore="RtlCompat" />
-        <TextView
-            android:id="@+id/tv_view3"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/user_name"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_margin="15dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp"
 
-            tools:ignore="RtlCompat" />
+            tools:ignore="RtlCompat">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/add"
+                app:civ_border_color="@color/gray3"
+                app:civ_border_width="1dp"
+                android:layout_gravity="center"
+                app:civ_circle_background_color="@color/gray3"
+                android:tint="@color/black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+
+
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recview3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv1"
@@ -409,22 +480,42 @@
             app:layout_constraintTop_toTopOf="parent"
 
             tools:ignore="RtlCompat" />
-        <TextView
-            android:id="@+id/tv_view4"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/user_name"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_margin="15dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp"
 
-            tools:ignore="RtlCompat" />
+            tools:ignore="RtlCompat">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/add"
+                app:civ_border_color="@color/gray3"
+                app:civ_border_width="1dp"
+                android:layout_gravity="center"
+                app:civ_circle_background_color="@color/gray3"
+                android:tint="@color/black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+
+
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv1"
