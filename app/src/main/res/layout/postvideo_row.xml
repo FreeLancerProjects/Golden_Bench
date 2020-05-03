@@ -82,20 +82,19 @@
                 />
             <LinearLayout
                 android:id="@+id/llll"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="15dp"
-                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
+             android:weightSum="3"
 
                 >
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
 
                     <ImageView
                         android:id="@+id/image_twitter"
@@ -103,29 +102,30 @@
                         android:layout_height="30dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/flag_sh"
+                        android:src="@drawable/ic_like"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/circle_image_bgb"
                         />
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="@string/share"
+                        android:text="@string/like"
                         android:textColor="@color/black"
                         android:textSize="14sp"
-                        app:layout_constraintTop_toBottomOf="@+id/image_twitter"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_twitter"
                         app:layout_constraintEnd_toEndOf="parent"
 
                         />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/image_instagram"
@@ -133,29 +133,31 @@
                         android:layout_height="30dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/flag_sh"
+                        android:src="@drawable/ic_voicem"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/circle_image_bgb"
+
                         />
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="@string/share"
+                        android:text="@string/comment"
                         android:textColor="@color/black"
                         android:textSize="14sp"
-                        app:layout_constraintTop_toBottomOf="@+id/image_instagram"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_instagram"
                         app:layout_constraintEnd_toEndOf="parent"
 
                         />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/image_facebook"
@@ -163,21 +165,23 @@
                         android:layout_height="30dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/flag_sh"
+                        android:src="@drawable/ic_share"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@drawable/circle_image_bgb"
+
                         />
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="@string/share"
                         android:textColor="@color/black"
                         android:textSize="14sp"
-                        app:layout_constraintTop_toBottomOf="@+id/image_facebook"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_facebook"
                         app:layout_constraintEnd_toEndOf="parent"
 
                         />

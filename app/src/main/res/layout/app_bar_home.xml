@@ -92,9 +92,9 @@ android:background="@color/white"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
 
-                        android:src="@drawable/ic_userrow"
+                        android:src="@drawable/ic_usernav"
                         android:tint="@color/gray7"
-
+android:layout_marginTop="5dp"
                         />
                 </LinearLayout>
 

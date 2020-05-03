@@ -214,7 +214,7 @@ public class HomeproActivity extends AppCompatActivity {
                 fragmentManager.beginTransaction().add(R.id.fragment_home_container, fragment_bench, "fragment_require").addToBackStack("fragment_require").commit();
 
             }
-            updateBottomNavigationPosition(2);
+            updateBottomNavigationPosition(1);
         } catch (Exception e) {
         }
         
@@ -247,7 +247,7 @@ public class HomeproActivity extends AppCompatActivity {
                 fragmentManager.beginTransaction().add(R.id.fragment_home_container, fragment_voice, "fragment_voice").addToBackStack("fragment_voice").commit();
 
             }
-            updateBottomNavigationPosition(1);
+            updateBottomNavigationPosition(2);
         } catch (Exception e) {
         }
     }

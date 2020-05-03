@@ -38,4 +38,6 @@
     <string name="contact_us">Contact Us</string>
     <string name="terms_and_conditions">Terms And Conditions</string>
     <string name="exit">Exit</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
 </resources>
