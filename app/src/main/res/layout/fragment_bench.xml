@@ -26,7 +26,7 @@ app:tabBackground="@drawable/tab_selected"
         </com.google.android.material.tabs.TabLayout>
         <LinearLayout
             android:id="@+id/tab12"
-            android:background="@color/gray5"
+            android:background="@color/gray7"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             app:layout_constraintTop_toBottomOf="@+id/tab1"
@@ -45,9 +45,44 @@ app:tabBackground="@drawable/tab_selected"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:text="@string/user_name"
+                    android:text="@string/attack"
                     android:layout_marginTop="5dp"
                     android:padding="5dp"
+android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:text="(0)"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:text="@string/center"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:gravity="center"
 
                     />
                 <TextView
@@ -79,9 +114,10 @@ app:tabBackground="@drawable/tab_selected"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:text="@string/user_name"
+                    android:text="@string/defense"
                     android:layout_marginTop="5dp"
                     android:padding="5dp"
+                    android:gravity="center"
 
                     />
                 <TextView
@@ -113,43 +149,10 @@ app:tabBackground="@drawable/tab_selected"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:text="@string/user_name"
+                    android:text="@string/keeper"
                     android:layout_marginTop="5dp"
                     android:padding="5dp"
-
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:text="(0)"
-                    android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:padding="5dp"
-                    />
-
-            </LinearLayout>
-            <View
-                android:layout_width="2dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:background="@color/white"
-                />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:text="@string/user_name"
-                    android:layout_marginTop="5dp"
-                    android:padding="5dp"
 
                     />
                 <TextView

@@ -20,6 +20,7 @@ import com.endpoint.golden_bench.databinding.FragmentProfileFollowerBinding;
 import com.endpoint.golden_bench.databinding.FragmentProfileProfessionalBinding;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
+import com.google.android.material.appbar.AppBarLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,17 +71,35 @@ public class Fragment_Profile extends Fragment {
         binding.pager.setAdapter(adapter);
 
 
+        binding.appBar.addOnOffsetChangedListener((AppBarLayout.BaseOnOffsetChangedListener) (appBarLayout, verticalOffset) -> {
+            int total_rang = appBarLayout.getTotalScrollRange();
+            if ((total_rang + verticalOffset) > 70) {
+
+
+                binding.btnBook.setVisibility(View.VISIBLE);
+
+
+
+            } else {
+                binding.btnBook.setVisibility(View.GONE);
+
+            }
+
+
+        });
     }
 
     private void addFragments_Titles() {
         fragmentList.add(Fragment_MyProfile.newInstance());
         fragmentList.add(FragmentManagePlayer.newInstance());
+        fragmentList.add(FragmentLike.newInstance());
 
         fragmentList.add(FragmentFollowers.newInstance());
 
 
         titles.add(getString(R.string.profile));
         titles.add(getString(R.string.manageplayer));
+        titles.add(getString(R.string.likes));
 
         titles.add(getString(R.string.followers));
 

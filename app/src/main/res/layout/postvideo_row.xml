@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:text="@string/user_name"
+            android:text="احمد"
             android:layout_marginTop="5dp"
             />
         <TextView
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/gray3"
             android:textSize="14sp"
-            android:text="@string/user_name"
+            android:text="@string/center"
             android:layout_marginTop="5dp"
             />
 

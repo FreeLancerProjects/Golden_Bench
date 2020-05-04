@@ -213,7 +213,8 @@
                         android:layout_height="25dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/add"
+                        android:src="@drawable/ic_usernav"
+                        android:tint="@color/white"
                         />
 
                 </FrameLayout>
@@ -256,10 +257,12 @@
                     <ImageView
                         android:id="@+id/icon3"
                         android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_height="35dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/add"
+                        android:src="@drawable/ic_web"
+                        android:tint="@color/white"
+                        android:scaleType="fitXY"
                         />
 
                 </FrameLayout>
@@ -287,6 +290,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 >
 
                 <FrameLayout

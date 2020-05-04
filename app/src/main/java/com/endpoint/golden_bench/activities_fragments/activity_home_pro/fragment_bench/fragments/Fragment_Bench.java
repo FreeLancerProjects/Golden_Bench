@@ -12,11 +12,14 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_bench.fragments.FragmentAgents;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_bench.fragments.FragmentPlayers;
 import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeproActivity;
 import com.endpoint.golden_bench.adapter.ViewPagerTitleAdapter;
 import com.endpoint.golden_bench.databinding.FragmentBenchBinding;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,17 +68,43 @@ public class Fragment_Bench extends Fragment {
         adapter.addFragments(fragmentList);
         adapter.addTitles(titles);
         binding.pager.setAdapter(adapter);
+        binding.tab12.setVisibility(View.GONE);
+        binding.tab1.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                binding.pager.setCurrentItem(tab.getPosition());
+                if(tab.getPosition()==0){
+                    binding.tab12.setVisibility(View.GONE);
+
+                }
+                else {
+                    binding.tab12.setVisibility(View.VISIBLE);
+
+                }
+//                Log.e("kk",viewPager.getAdapter().getPageTitle(0).toString());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
 
     }
 
     private void addFragments_Titles() {
-        fragmentList.add(FragmentPlayers.newInstance());
         fragmentList.add(FragmentAgents.newInstance());
+        fragmentList.add(FragmentPlayers.newInstance());
 
 
-        titles.add(getString(R.string.player));
         titles.add(getString(R.string.agents));
+        titles.add(getString(R.string.player));
 
     }
 

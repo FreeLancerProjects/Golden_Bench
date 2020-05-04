@@ -40,4 +40,17 @@
     <string name="exit">Exit</string>
     <string name="like">Like</string>
     <string name="comment">Comment</string>
+    <string name="current_posts_with_the_team">Current posts with the team</string>
+    <string name="add">Add</string>
+    <string name="current_posts_with_the_national_team">Current posts with the national team</string>
+    <string name="the_teams_i_played_in">The teams I played in</string>
+    <string name="demonstration_video">demonstration video</string>
+    <string name="attack">Attack</string>
+    <string name="center">Center</string>
+    <string name="defense">Defense</string>
+    <string name="keeper">Keeper</string>
+    <string name="add_blog">Add Blog</string>
+    <string name="more">More</string>
+    <string name="add_photo">ِAdd Photo</string>
+    <string name="likes">Likes And Comments</string>
 </resources>

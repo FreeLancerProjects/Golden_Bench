@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
     </data>
+
     <androidx.cardview.widget.CardView
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -13,7 +14,7 @@
         android:layout_marginTop="3dp"
         android:layout_marginBottom="2dp"
         app:cardCornerRadius="5dp"
-        app:cardBackgroundColor="@color/gray5"
+        app:cardBackgroundColor="@color/gray3"
         app:contentPadding="5dp"
         app:cardElevation="3dp"
         >
@@ -21,19 +22,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.github.siyamed.shapeimageview.RoundedImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/r_im_search"
                 android:layout_width="90dp"
-                android:layout_height="110dp"
+                android:layout_height="90dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-app:layout_constraintBottom_toBottomOf="parent"
 
-                android:src="@drawable/studiem"
-                app:riv_border_width="1dp"
-                app:riv_border_color="@color/gray3"
-                app:riv_corner_radius="10dp"
-                
+                app:civ_border_color="@color/gray4"
+                app:civ_border_width="1dp"
+                android:src="@drawable/ic_userrow"
                 />
 
             <LinearLayout
@@ -45,69 +43,40 @@ app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="8dp"
-
                 tools:ignore="RtlCompat">
-                <com.github.siyamed.shapeimageview.RoundedImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
 
-                    android:src="@drawable/s3ar"
-                    />
                 <TextView
                     android:id="@+id/tv_bank_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:text="احمد"
+                    android:text="احب الكره والرياضه"
                     android:layout_marginTop="5dp"
                     />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:text="نادى الهلال السهودى"
-                    android:layout_marginTop="5dp"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:text="وسط مهاجم"
+                    android:text="نص المقال نص المقال نص المقال نص المقال نص المقال نص المقالنص المقال نص المقال نص المقالنص المقال نص المقال نص المقالنص المقال نص المقال نص المقالنص المقال نص المقال نص المقال"
                     android:layout_marginTop="5dp"
                     />
 
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+            <TextView
+                android:id="@+id/r_im_searchs"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/r_im_searchs"
-
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="14sp"
-                    android:text="@string/demonstration_video"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/gray7"
-                    android:gravity="center"
-                    />
-                <VideoView
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-
-                    />
-            </LinearLayout>
-
+                tools:ignore="RtlCompat"
+                android:textSize="10sp"
+android:textColor="@color/gray5"
+                android:text="25 فبراير 2020"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
 </layout>
