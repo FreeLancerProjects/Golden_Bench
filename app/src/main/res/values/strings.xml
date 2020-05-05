@@ -53,4 +53,8 @@
     <string name="more">More</string>
     <string name="add_photo">ِAdd Photo</string>
     <string name="likes">Likes And Comments</string>
+    <string name="message">Message</string>
+    <string name="accept">Accept</string>
+    <string name="logout">Logout</string>
+    <string name="through_this_platform_you_can_follow_the_skills_of_your_favorite_players">Through this platform, you can follow the skills of your favorite players</string>
 </resources>

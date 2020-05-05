@@ -90,7 +90,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cons_add"
+                android:id="@+id/cons_pro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha=".8"
@@ -116,7 +116,8 @@
                         android:layout_height="25dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/add"
+                        android:src="@drawable/ic_target_location"
+                       android:tint="@color/white"
                         />
 
                 </FrameLayout>
@@ -141,6 +142,7 @@
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
+               android:id="@+id/conshome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
@@ -192,6 +194,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
+               android:id="@+id/comsprofile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
@@ -339,6 +342,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/conscontact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
@@ -410,7 +414,7 @@
                         android:layout_height="25dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/add"
+                        android:src="@drawable/ic_lhome"
                         />
 
                 </FrameLayout>
@@ -435,6 +439,7 @@
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
+               android:id="@+id/consexit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
@@ -456,7 +461,7 @@
                         android:layout_height="25dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/ic_lhome"
+                        android:src="@drawable/logout"
                         android:tint="@color/white"
 
                         />
@@ -472,7 +477,7 @@
                     android:clickable="false"
                     android:gravity="center_vertical"
                     android:longClickable="false"
-                    android:text="@string/exit"
+                    android:text="@string/logout"
                     android:textColor="@color/white"
                     android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"

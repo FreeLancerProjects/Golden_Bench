@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -19,11 +21,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.endpoint.golden_bench.R;
+import com.endpoint.golden_bench.activities_fragments.activity_contact.ContactActivity;
+import com.endpoint.golden_bench.activities_fragments.activity_home_follow.HomeFollowerActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.Fragment_Main;
 import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.Fragment_Voice;
 import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_bench.fragments.Fragment_Bench;
 import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_profile.Fragment_Profile;
 import com.endpoint.golden_bench.activities_fragments.activity_signin.SigninActivity;
+import com.endpoint.golden_bench.activities_fragments.activity_terms.TermsActivity;
+import com.endpoint.golden_bench.activities_fragments.proactivity.ProActivity;
 import com.endpoint.golden_bench.language.Language;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
@@ -47,6 +53,7 @@ public class HomeplayerActivity extends AppCompatActivity {
     private ActionBarDrawerToggle toggle;
     private Toolbar toolbar;
     private String lang;
+    private ConstraintLayout cons_profile, cons_terms, cons_contact, cons_home, cons_pro, cons_logout;
 
 
     protected void attachBaseContext(Context newBase) {
@@ -82,14 +89,69 @@ public class HomeplayerActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
         fragmentManager = getSupportFragmentManager();
         toolbar = findViewById(R.id.toolbar);
-        
+        cons_profile = findViewById(R.id.comsprofile);
+        cons_terms = findViewById(R.id.cons_terms);
+        cons_home = findViewById(R.id.conshome);
+        cons_contact = findViewById(R.id.conscontact);
+
+        cons_pro = findViewById(R.id.cons_pro);
+
+
+        cons_logout = findViewById(R.id.consexit);
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorAccent));
         manager = new LinearLayoutManager(this);
-       
+
 
         toggle.syncState();
         setUpBottomNavigation();
+        cons_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout();
+            }
+        });
+
+        cons_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                displayFragmentProfile();
+
+            }
+        });
+        cons_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                displayFragmentMain();
+
+            }
+        });
+        cons_pro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(HomeplayerActivity.this, ProActivity.class);
+                startActivity(intent);
+            }
+        });
+        cons_terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(HomeplayerActivity.this, TermsActivity.class);
+                startActivity(intent);
+            }
+        });
+        cons_contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(HomeplayerActivity.this, ContactActivity.class);
+                startActivity(intent);
+            }
+        });
        
 
     }

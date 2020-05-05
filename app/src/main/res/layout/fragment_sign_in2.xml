@@ -66,11 +66,11 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="5dp"
 
-                    android:text="@string/are_you_forgot_password"
+                    android:text="@string/through_this_platform_you_can_follow_the_skills_of_your_favorite_players"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_gravity="center"
-
+android:gravity="center"
                     tools:ignore="RtlCompat" />
             </LinearLayout>
 

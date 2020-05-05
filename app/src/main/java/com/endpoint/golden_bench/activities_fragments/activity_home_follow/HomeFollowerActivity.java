@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -20,11 +23,15 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
 import com.endpoint.golden_bench.R;
+import com.endpoint.golden_bench.activities_fragments.activity_contact.ContactActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.Fragment_Main;
 import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.Fragment_Voice;
 import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.fragment_bench.fragments.Fragment_Bench;
 import com.endpoint.golden_bench.activities_fragments.activity_home_follow.fragments.fragment_profile.Fragment_Profile;
+import com.endpoint.golden_bench.activities_fragments.activity_home_player.HomeplayerActivity;
 import com.endpoint.golden_bench.activities_fragments.activity_signin.SigninActivity;
+import com.endpoint.golden_bench.activities_fragments.activity_terms.TermsActivity;
+import com.endpoint.golden_bench.activities_fragments.proactivity.ProActivity;
 import com.endpoint.golden_bench.language.Language;
 import com.endpoint.golden_bench.models.UserModel;
 import com.endpoint.golden_bench.preferences.Preferences;
@@ -49,19 +56,20 @@ public class HomeFollowerActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private String lang;
 
+    private ConstraintLayout cons_profile, cons_terms, cons_contact, cons_home, cons_pro, cons_logout;
 
     protected void attachBaseContext(Context newBase) {
         Paper.init(newBase);
         super.attachBaseContext(Language.updateResources(newBase, Paper.book().read("lang", "ar")));}
 
 
-  
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    
+
         setContentView(R.layout.activity_home);
         initView();
 
@@ -83,16 +91,69 @@ public class HomeFollowerActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
         fragmentManager = getSupportFragmentManager();
         toolbar = findViewById(R.id.toolbar);
-        
+        cons_profile = findViewById(R.id.comsprofile);
+        cons_terms = findViewById(R.id.cons_terms);
+        cons_home = findViewById(R.id.conshome);
+        cons_contact = findViewById(R.id.conscontact);
+
+        cons_pro = findViewById(R.id.cons_pro);
+
+
+        cons_logout = findViewById(R.id.consexit);
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorAccent));
         manager = new LinearLayoutManager(this);
-       
+
 
         toggle.syncState();
         setUpBottomNavigation();
-       
+        cons_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout();
+            }
+        });
 
+        cons_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+          displayFragmentProfile();
+
+            }
+        });
+        cons_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                displayFragmentMain();
+
+            }
+        });
+        cons_pro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(HomeFollowerActivity.this, ProActivity.class);
+                startActivity(intent);
+            }
+        });
+        cons_terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(HomeFollowerActivity.this, TermsActivity.class);
+                startActivity(intent);
+            }
+        });
+        cons_contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent(HomeFollowerActivity.this, ContactActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void Logout() {
@@ -143,9 +204,9 @@ public class HomeFollowerActivity extends AppCompatActivity {
                         break;
                     case 3:
                             displayFragmentProfile();
-                      
+
                         break;
-                  
+
                 }
                 return false;
             }
@@ -218,7 +279,7 @@ public class HomeFollowerActivity extends AppCompatActivity {
             updateBottomNavigationPosition(1);
         } catch (Exception e) {
         }
-        
+
 
 
     }
