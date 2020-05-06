@@ -16,10 +16,10 @@ public class App extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        TypefaceUtil.overrideFont(this, "SERIF", "fonts/GE-SS-Two-Bold.otf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
-        TypefaceUtil.overrideFont(this, "DEFAULT", "fonts/GE-SS-Two-Bold.otf");
-        TypefaceUtil.overrideFont(this, "MONOSPACE", "fonts/GE-SS-Two-Bold.otf");
-        TypefaceUtil.overrideFont(this, "SANS_SERIF", "fonts/GE-SS-Two-Bold.otf");
+        TypefaceUtil.overrideFont(this, "SERIF", "font/Ara Hamah Kilania_0.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
+        TypefaceUtil.overrideFont(this, "DEFAULT", "font/Ara Hamah Kilania_0.ttf");
+        TypefaceUtil.overrideFont(this, "MONOSPACE", "font/Ara Hamah Kilania_0.ttf");
+        TypefaceUtil.overrideFont(this, "SANS_SERIF", "font/Ara Hamah Kilania_0.ttf");
     }
 }
 
