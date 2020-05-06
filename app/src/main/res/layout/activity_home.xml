@@ -364,7 +364,7 @@
                         android:layout_height="25dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/ic_lhome"
+                        android:src="@drawable/ic_phone"
                         android:tint="@color/white"
 
                         />
@@ -414,7 +414,7 @@
                         android:layout_height="25dp"
                         android:clickable="false"
                         android:longClickable="false"
-                        android:src="@drawable/ic_lhome"
+                        android:src="@drawable/ic_phone"
                         />
 
                 </FrameLayout>
