@@ -79,12 +79,8 @@ msgLeftHolder.binding.videoview.setOnCompletionListener(new MediaPlayer.OnComple
     }
 });
 if(i==position){
-   if(!msgLeftHolder.binding.videoview.isPlaying()){
        msgLeftHolder.binding.videoview.start();
-   }
-   else {
-       msgLeftHolder.binding.videoview.resume();
-   }
+
 }
 else {
     msgLeftHolder.binding.videoview.pause();

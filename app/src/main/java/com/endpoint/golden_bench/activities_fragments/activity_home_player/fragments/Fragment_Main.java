@@ -20,6 +20,7 @@ import com.endpoint.golden_bench.activities_fragments.activity_home_player.Homep
 import com.endpoint.golden_bench.adapter.Category_Adapter;
 import com.endpoint.golden_bench.adapter.Categorys_Adapter;
 import com.endpoint.golden_bench.databinding.FragmnetMainBinding;
+import com.endpoint.golden_bench.databinding.PostRowBinding;
 import com.endpoint.golden_bench.models.MarketCatogryModel;
 import com.endpoint.golden_bench.preferences.Preferences;
 
@@ -77,7 +78,6 @@ public class Fragment_Main extends Fragment {
         binding.progBar.setVisibility(View.GONE);
         binding.progBarservice.setVisibility(View.GONE);
         Adddata();
-
     }
 
     private void Adddata() {
