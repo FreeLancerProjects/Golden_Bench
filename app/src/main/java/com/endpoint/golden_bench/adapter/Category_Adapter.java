@@ -1,6 +1,7 @@
 package com.endpoint.golden_bench.adapter;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,8 @@ public class Category_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private Context context;
     private LayoutInflater inflater;
     private String lang;
+    private int i=-1;
+
     public Category_Adapter(List<MarketCatogryModel.Data> orderlist, Context context) {
         this.orderlist = orderlist;
         this.context = context;
@@ -67,12 +70,25 @@ public class Category_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
             msgLeftHolder.binding.videoview.setVideoPath("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
 //msgLeftHolder.binding.videoview.requestFocus();
-msgLeftHolder.binding.videoview.setOnClickListener(new View.OnClickListener() {
+msgLeftHolder.binding.videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
     @Override
-    public void onClick(View v) {
-
+    public void onCompletion(MediaPlayer mediaPlayer) {
+        if(!mediaPlayer.isPlaying()){
+       i=position;
+       notifyDataSetChanged();}
     }
 });
+if(i==position){
+   if(!msgLeftHolder.binding.videoview.isPlaying()){
+       msgLeftHolder.binding.videoview.start();
+   }
+   else {
+       msgLeftHolder.binding.videoview.resume();
+   }
+}
+else {
+    msgLeftHolder.binding.videoview.pause();
+}
 
         } else if (holder instanceof EventsHolder) {
             EventsHolder msgRightHolder = (EventsHolder) holder;

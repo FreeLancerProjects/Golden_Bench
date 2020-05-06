@@ -69,19 +69,27 @@
         <activity
             android:name=".activities_fragments.activity_home_pro.HomeproActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
         </activity>
         <activity
             android:name=".activities_fragments.activity_home_follow.HomeFollowerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            >
 
         </activity>
         <activity
             android:name=".activities_fragments.activity_home_player.HomeplayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            >
 
         </activity>
     </application>
