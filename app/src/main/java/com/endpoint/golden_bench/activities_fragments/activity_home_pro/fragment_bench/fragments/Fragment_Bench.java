@@ -12,8 +12,6 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.endpoint.golden_bench.R;
-import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_bench.fragments.FragmentAgents;
-import com.endpoint.golden_bench.activities_fragments.activity_home_player.fragments.fragment_bench.fragments.FragmentPlayers;
 import com.endpoint.golden_bench.activities_fragments.activity_home_pro.HomeproActivity;
 import com.endpoint.golden_bench.adapter.ViewPagerTitleAdapter;
 import com.endpoint.golden_bench.databinding.FragmentBenchBinding;
